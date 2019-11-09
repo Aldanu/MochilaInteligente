@@ -14,6 +14,8 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -23,6 +25,8 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 
 import android.widget.Toast;
+
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -74,6 +78,10 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void Algo(View view) {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("message");
+
+        myRef.setValue("Conexion Realizada: "+ new Date());
         Toast.makeText(this, "Boton apretado", Toast.LENGTH_SHORT).show();
         Intent i=new Intent(MainActivity.this, DeviceListActivity.class);
         startActivity(i);
