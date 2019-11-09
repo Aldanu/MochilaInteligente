@@ -1,4 +1,4 @@
-package com.example.mochilainteligente.ui.send;
+package com.example.mochilainteligente.ui.Material;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.mochilainteligente.R;
 
-public class SendFragment extends Fragment {
+public class MaterialFragment extends Fragment {
 
-    private SendViewModel sendViewModel;
+    private MaterialViewModel materialViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        sendViewModel =
-                ViewModelProviders.of(this).get(SendViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_send, container, false);
-        final TextView textView = root.findViewById(R.id.text_send);
-        sendViewModel.getText().observe(this, new Observer<String>() {
+        materialViewModel =
+                ViewModelProviders.of(this).get(MaterialViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_material, container, false);
+        final TextView textView = root.findViewById(R.id.text_material);
+        materialViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

@@ -1,16 +1,16 @@
-package com.example.mochilainteligente.ui.send;
+package com.example.mochilainteligente.ui.Material;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class SendViewModel extends ViewModel {
+public class MaterialViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public SendViewModel() {
+    public MaterialViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is send fragment");
+        mText.setValue("This is material fragment");
     }
 
     public LiveData<String> getText() {
