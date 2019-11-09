@@ -1,5 +1,6 @@
 package com.example.mochilainteligente;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -20,6 +21,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
+
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -70,4 +73,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public void Algo(View view) {
+        Toast.makeText(this, "Boton apretado", Toast.LENGTH_SHORT).show();
+        Intent i=new Intent(MainActivity.this, DeviceListActivity.class);
+        startActivity(i);
+    }
 }
