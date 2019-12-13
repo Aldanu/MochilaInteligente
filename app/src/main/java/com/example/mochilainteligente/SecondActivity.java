@@ -2,6 +2,7 @@ package com.example.mochilainteligente;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import java.io.IOException;
@@ -43,6 +44,7 @@ public class SecondActivity extends Activity {
     // String for MAC address
     private static String address = null;
 
+    @SuppressLint("HandlerLeak")
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -136,7 +138,6 @@ public class SecondActivity extends Activity {
         address = intent.getStringExtra(DeviceListActivity.EXTRA_DEVICE_ADDRESS);
 
         //create device and set the MAC address
-        //Log.i("ramiro", "adress : " + address);
         BluetoothDevice device = btAdapter.getRemoteDevice(address);
 
         try {
